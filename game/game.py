@@ -1,14 +1,14 @@
 import pygame
 import sys
-import game_rules
-from ant import Ant
-from game_graphics import GameGraphics
-from game_graphics import NoGraphics
-from point_generator import PointGenerator
-from spider import Spider
-from sugar import Sugar
-from game_score import GameScore
-from game_entities import GameEntities
+from game import game_rules
+from entities.ant import Ant
+from game.game_graphics import GameGraphics
+from game.game_graphics import NoGraphics
+from game.random_point_generator import RandomPointGenerator
+from entities.spider import Spider
+from entities.sugar import Sugar
+from game.game_score import GameScore
+from game.game_entities import GameEntities
 
 
 class Game:
@@ -33,7 +33,7 @@ class Game:
         self.__setup()
 
     def __setup(self):
-        point_generator = PointGenerator(
+        point_generator = RandomPointGenerator(
             points_to_generate=game_rules.ANT_COUNT + game_rules.SPIDER_COUNT + game_rules.SUGAR_COUNT, min_distance=50)
         self.__add_entities(Sugar, game_rules.SUGAR_COUNT, self.entities.add_sugar, point_generator,
                             score_counter=self.score_counter)
@@ -44,7 +44,7 @@ class Game:
     @staticmethod
     def __add_entities(entity_class, entity_count, entity_adder, point_generator, **kwargs):
         for i in range(entity_count):
-            entity = entity_class(position=point_generator.get_point(), **kwargs)
+            entity = entity_class(position=point_generator.get_next_point(), **kwargs)
             entity_adder(entity)
 
     def __handle_events(self):

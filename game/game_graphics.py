@@ -1,8 +1,8 @@
 from abc import abstractmethod
 
 import pygame
-import game_rules
-import online_score
+from game import game_rules
+from web import online_score
 
 GAME_AREA_CENTER_X = game_rules.GAME_AREA_WIDTH / 2
 GAME_AREA_CENTER_Y = game_rules.GAME_AREA_HEIGHT / 2

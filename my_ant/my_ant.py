@@ -1,7 +1,6 @@
-import game_rules
-import util
-from vector import Vector
-
+from game import game_rules
+from vector import util
+from vector.vector import Vector
 
 avoid_ant_factor = 8
 avoid_spider_factor = 5

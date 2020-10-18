@@ -1,8 +1,7 @@
 import pygame
-import game_rules
-import util
+from game import game_rules
 from abc import abstractmethod
-from vector import Vector
+from vector.vector import Vector
 
 
 class Entity(pygame.sprite.Sprite):

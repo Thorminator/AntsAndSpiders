@@ -1,9 +1,9 @@
-import game_rules
+from game import game_rules
 import random
 import math
 
 
-class PointGenerator:
+class RandomPointGenerator:
     def __init__(self, points_to_generate, min_distance):
         self.points_to_generate = points_to_generate
         self.min_distance = min_distance
@@ -28,7 +28,7 @@ class PointGenerator:
         distances = tuple(math.sqrt((point[0] - x) ** 2 + (point[1] - y) ** 2) for (x, y) in existing_points)
         return all(dist > self.min_distance for dist in distances)
 
-    def get_point(self):
+    def get_next_point(self):
         if len(self.points) > 0:
             choice = random.choice(self.points)
             self.points.remove(choice)

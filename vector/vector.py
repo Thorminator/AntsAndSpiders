@@ -1,5 +1,4 @@
 import math
-import util
 
 
 class Vector:

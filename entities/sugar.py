@@ -1,7 +1,6 @@
-import entity
-import game_rules
-import game_score
-from vector import Vector
+from entities import entity
+from game import game_rules
+from vector.vector import Vector
 
 
 class Sugar(entity.Entity):

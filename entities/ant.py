@@ -1,7 +1,7 @@
 import pygame
-import entity
-import game_rules
-from my_ant import get_ant_direction
+from entities import entity
+from game import game_rules
+from my_ant.my_ant import get_ant_direction
 
 
 def collided_except_self(e1, e2):

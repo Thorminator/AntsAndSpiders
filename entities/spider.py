@@ -1,7 +1,7 @@
-import entity
-import game_rules
-import util
-from vector import Vector
+from entities import entity
+from game import game_rules
+from vector import util
+from vector.vector import Vector
 
 
 class Spider(entity.Entity):

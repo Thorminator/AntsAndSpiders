@@ -1,5 +1,5 @@
-import game_rules
-from vector import Vector
+from game import game_rules
+from vector.vector import Vector
 
 
 def sum_vectors(vectors):
