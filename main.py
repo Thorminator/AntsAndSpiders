@@ -2,7 +2,7 @@ import sys
 import re
 from web import online_score
 import os
-from game.game import Game
+from game import Game
 import multiprocessing as mp
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
