@@ -15,7 +15,7 @@ class GameScore:
             self.__update_score_to_return()
 
     def __update_score_to_return(self):
-        self.score_to_return = int(max(self.sugar_collected - self.ticks / 20, 0))
+        self.score_to_return = int(self.sugar_collected - min(1000, int(self.ticks / 200)))
         self.time_to_next_update = SCORE_UPDATE_AFTER
 
     def get_score(self):

@@ -23,7 +23,7 @@ def get_username():
 
 def benchmark():
     pool = mp.Pool(mp.cpu_count())
-    scores = pool.map(run_simulation, [i for i in range(10)])
+    scores = pool.map(run_simulation, [i for i in range(200)])
     pool.close()
     benchmark_score = int(sum(scores) / len(scores))
     print(f"Your benchmark score is: {benchmark_score} points.")
